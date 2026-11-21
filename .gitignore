@@ -1,0 +1,10 @@
+# Private working notes (they name the owner's Chinese name and internal decisions).
+CLAUDE.md
+style.md
+# Local preview versions and design review notes.
+.compare/
+.compare-studio/
+.impeccable/
+# System files.
+.DS_Store
+node_modules/

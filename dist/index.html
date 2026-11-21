@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nadia Sha — Project Architect</title>
+  <meta name="description" content="Built work, academic research and cross-disciplinary collaborations by Nadia Sha, project architect.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='white'/%3E%3Cpath d='M6 25V7h20v18M6 16h20M16 7v18' fill='none' stroke='%23a72e24' stroke-width='2'/%3E%3C/svg%3E">
+  <meta name="portfolio-version" content="grid-20260925-03">
+  <link rel="stylesheet" href="style.css?v=grid-03">
+  <link rel="stylesheet" href="fonts.css?v=1">
+  <link rel="stylesheet" href="compact.css?v=1">
+</head>
+<body>
+  <a class="skip" href="#projects">Skip to projects</a>
+  <header class="profile">
+    <h1 class="profile-name">Nadia<br>Sha<span>*</span></h1>
+    <div class="profile-intro">
+      <p>Architecture, research<br>&amp; cross-disciplinary practice.</p>
+      <p class="profile-note">An evolving archive of built work, academic inquiry and collaborative projects.</p>
+    </div>
+    <div class="profile-status">PROJECT ARCHITECT</div>
+  </header>
+  <main id="projects">
+    <nav class="categories" aria-label="Project categories">
+      <button class="category active" data-filter="all" aria-pressed="true">ALL</button>
+      <button class="category" data-filter="research" aria-pressed="false">RESEARCH</button>
+      <button class="category" data-filter="projects" aria-pressed="false">PROJECTS</button>
+      <button class="category" data-filter="cross-disciplinary" aria-pressed="false">CROSS-DISCIPLINARY</button>
+      <span class="filter-count" aria-live="polite"></span>
+      <button class="category contact-toggle" data-filter="contact" aria-pressed="false">CONTACT</button>
+    </nav>
+    <section class="contact-panel" hidden aria-label="Contact information">
+      <span>EMAIL — TO BE ADDED</span>
+      <span>PHONE — TO BE ADDED</span>
+      <span>LOCATION — TO BE ADDED</span>
+    </section>
+    <section class="grid" aria-label="Project archive"></section>
+    <noscript><p>Please enable JavaScript to view the project archive.</p></noscript>
+  </main>
+  <footer><span>* Project architect. Contact information to be added.</span><span>All images are temporary placeholders. Entries 06–15 are samples, not actual work.</span></footer>
+  <dialog id="project-dialog" aria-labelledby="project-title">
+    <div class="dialog-bar"><span id="project-number"></span><button id="close-project" aria-label="Close project details" autofocus>Close ×</button></div>
+    <div class="detail">
+      <div class="detail-copy"><p class="detail-label" id="project-category"></p><h1 id="project-title" tabindex="-1"></h1><dl id="project-facts"></dl><p id="project-summary"></p><nav id="project-documents" class="project-documents" aria-label="Original documents" hidden></nav><p class="detail-note" id="project-note"></p></div>
+      <div class="detail-image"><img id="detail-image" alt=""><div id="project-pages" class="project-pages"></div><p id="image-credit"></p></div>
+      <nav id="project-nav" class="project-nav" aria-label="More projects"></nav>
+    </div>
+  </dialog>
+  <script src="content.js?v=grid-03"></script>
+  <script src="app.js?v=grid-03"></script>
+</body>
+</html>
