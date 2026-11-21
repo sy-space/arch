@@ -1,10 +1,8 @@
-# Nadia Sha 作品集
+# 作品集
 
-本项目是 Nadia Sha 的英文建筑作品集网站，用 HTML、CSS 和 JavaScript 写成，无需构建，也无需安装依赖。整个网站放在 `dist/` 文件夹。
+本项目是 个人建筑作品集网站，用 HTML、CSS 和 JavaScript 写成，无需构建，也无需安装依赖。整个网站放在 `dist/` 文件夹。
 
 首页顶部一行放名字、三个分类和 CONTACT。下面是简介，再往下是贴满屏幕的方图墙：一行四张，文字在图下，Contact 占最后一格。
-
-旧的 Codex 版本已删除，GitHub 历史记录保留了它（提交 8e99c24）。
 
 ## 预览
 
@@ -21,12 +19,6 @@ node scripts/serve.mjs
 ## 项目和图片
 
 首页现有 15 个条目，01 到 05 是真实作品：
-
-- 01 MOKA SUSHI，Hobro，2026 年 2 月至 7 月建成。
-- 02 Living Energy，Aarhus 建筑学院硕士论文，2026。
-- 03 Theatre Built from Reclaimed Building Materials，Aarhus，2024 年秋。
-- 04 Living a Ramp，EPFL EAST，与 Domingo Prada 合作，Basel，2024 年春。
-- 05 Collective Housing，Aarhus，2023 年 9 月至 12 月，简介待写。
 
 06 到 15 是示例，显示为模糊方块，页脚注明它们并非真实作品。上线前从首页移除。
 
@@ -91,5 +83,4 @@ git push
 - 照片导出为 WebP 或 JPG，不用 PNG。
 - 换图时同步修改图片说明 `alt`、正文和信息表。
 - 作者、摄影师、合作者和个人职责照实填写。未提供的地点、成果和联系方式留空，不编造。
-- 所有照片和图纸均为 Nadia Sha 本人作品。
-- 网站只出现英文名 Nadia Sha。联系方式尚未提供。
+- 所有照片和图纸均为 本人作品。 
