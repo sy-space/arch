@@ -49,8 +49,8 @@ research[0].title = 'Living Energy';
 research[0].detailTitle = 'Living Energy — From Energy Supply to Living With Energy';
 research[0].location = 'Aarhus, Denmark';
 research[0].year = 2026;
-research[0].image = 'living-energy-outcome/interior-01.webp';
-research[0].alt = 'Living Energy interior rendering showing a split-level space, movable furniture and red heating pipes.';
+research[0].image = 'living-energy-outcome/airflow-frame.jpg';
+research[0].alt = 'Airflow study drawn over the typical unit floor plans, a frame from the Living Energy airflow animation.';
 research[0].summary = 'Living Energy explores how architecture can organize and reveal energy rather than seal it away. The research begins with the building as an open thermal system and considers how the body senses changing temperature, light and air. At an existing warehouse on Sumatravej 1 in Aarhus, the thesis develops a spatial proposal using thermal mass, active heating, openings, height differences and movable furniture walls. The preliminary booklet establishes the research context; the 0622 presentation traces the design logic from site and material studies to airflow, heating and facade strategies. Plans, sections, axonometrics and interior views document the proposal. Photographs of the physical model record its relationship to the site. The final animation shows airflow through a typical unit.';
 research[0].documents = [
   ['RESEARCH BOOKLET (PDF)', 'living-energy-research.pdf'],
@@ -99,8 +99,8 @@ research[1].title = 'Living a Ramp';
 research[1].location = 'Basel, Switzerland';
 research[1].year = 2024;
 research[1].affiliation = 'EPFL EAST';
-research[1].image = 'living-a-ramp/hero.webp';
-research[1].alt = 'Rendering of a proposed interior within the existing parking ramp at Parkhaus Leimgrube.';
+research[1].image = 'living-a-ramp/cover.jpg';
+research[1].alt = 'Rendering of the shared circulation space under blue steel beams in the converted parking structure.';
 research[1].summary = 'Living a Ramp reimagines Parkhaus Leimgrube, a parking structure in Basel, as a place for dwelling. Rather than treating its continuous slope as an obstacle to be levelled, the project asks how the ramp itself can shape domestic space and movement. The research first documents the existing building, its structure and circulation. A catalogue of furniture encountered on the slopes of Lausanne then studies how everyday objects meet inclined ground. In the proposal, a meandering horizontal surface accommodates the activities that need level support: sleeping, sitting, cooking and gathering. Its changing relationship with the ramp creates different heights, rooms and moments of transition. Apartments extend toward a shared circulation zone at the facade, while the original concrete slope remains legible. Plans, sections, spatial views and a physical model show how a structure made for cars could support a new experience of living.';
 research[1].documents = [
   ['PROJECT BOOKLET (PDF)', 'living-a-ramp-booklet.pdf'],
@@ -135,8 +135,8 @@ research[2].title = 'Collective Housing, Aarhus';
 research[2].detailTitle = 'Collective Housing — Aarhus';
 research[2].location = 'Aarhus, Denmark';
 research[2].year = 2023;
-research[2].image = 'collective-housing-2023/interior-hero.webp';
-research[2].alt = 'Interior rendering of the collective housing study in Aarhus.';
+research[2].image = 'collective-housing-2023-model/page-1.jpg';
+research[2].alt = 'Physical model of the collective housing study: close view of the curved balcony facade.';
 research[2].summary = 'Project description to be added.';
 research[2].documents = [
   ['PHYSICAL MODEL (PDF)', 'collective-housing-2023-model.pdf'],
@@ -152,6 +152,13 @@ research[2].media = [
   ['private-interiors.webp', 'Private interior renderings'],
   ['interior-hero.webp', 'Interior rendering of the collective space'],
   ['model-and-detail.webp', 'Model views and architectural detail'],
+  // Review images from the owner's GitHub (tmp/collective-housing-review), used until the drawings above arrive.
+  ['design-1.jpg', 'Two structural axonometric views of the housing block'],
+  ['design-2.jpg', 'Structural strategy: elevations and axonometric of the frame'],
+  ['design-3.jpg', 'Construction detail axonometric, line drawing'],
+  ['design-4.jpg', 'Rendered axonometric of a timber-framed core with tiled walls'],
+  ['design-5.jpg', 'Close-up rendering of a doorway and floor finish'],
+  ['design-6.jpg', 'Section with notes on environmental performance'],
 ].map(([filename, alt]) => ({ type: 'image', src: `collective-housing-2023/${filename}`, alt }))
   .concat(Array.from({ length: 9 }, (_, i) => ({
     type: 'image', src: `collective-housing-2023-model/page-${i + 1}.jpg`,
@@ -172,7 +179,7 @@ research[2].note = '';
 research[3].title = 'Theatre Built from Reclaimed Building Materials';
 research[3].location = 'Aarhus, Denmark';
 research[3].year = 2024;
-research[3].image = 'reclaimed-stage/page-11.jpg';
+research[3].image = 'reclaimed-stage/cover.jpg';
 research[3].alt = 'Interior view beneath the reclaimed-material roof, from the penultimate page of the project booklet.';
 research[3].summary = 'Theatre Built from Reclaimed Building Materials proposes a small performance venue in Aarhus. Developed as an individual design project in autumn 2024, it begins with studies of lightweight structures and reusable components. A repeated metal frame supports a canopy of folded roof elements over an open performance space. The drawings consider how the parts meet, how daylight enters, and how a modest stage can sit within the larger volume. A site model, axonometric, plan, facade and section describe the overall form. A separate assembly study identifies scaffolding, steel members, sheet panels, cables, lighting and drainage within the roof detail. Exterior and interior views show the proposal from the surrounding site and from the performance space. The project uses recovered construction material as the starting point for an architectural proposal, with the atmosphere and structure developed together.';
 research[3].documents = [['PROJECT BOOKLET (PDF)', 'reclaimed-stage-booklet.pdf']];
@@ -197,8 +204,9 @@ research.splice(1, 0, research.splice(3, 1)[0]);
 personal[0].title = 'MOKA SUSHI';
 personal[0].location = 'Hobro, Denmark';
 personal[0].year = 2026;
-personal[0].image = 'moka-sushi/photo-01.png';
-personal[0].alt = 'MOKA SUSHI dining space with pale timber furniture, counter and warm daylight.';
+// Until the photographs of the built space arrive, the tile shows the bar-counter rendering (design presentation page 11, cropped square).
+personal[0].image = 'moka-sushi/cover.jpg';
+personal[0].alt = 'Rendering of the MOKA SUSHI timber bar counter and canopy, from the April design presentation.';
 personal[0].summary = 'MOKA SUSHI is an independently developed and built restaurant interior in Hobro, Denmark, completed between February and July 2026. The design centres on a timber bar that brings food preparation, ordering and handover into one visible sequence. A light canopy defines the counter without closing off the room, while seating extends along the windows and into smaller areas for groups. Pale wood, soft lighting and translucent curtains give the space a warm, open atmosphere. A two-tone wall and small red diamond details provide a measured rhythm across the interior. The archive begins with photographs of the built space, then moves through details and construction views. The original April design presentation follows with the plan, counter studies, axonometrics and entrance proposal, showing how the project developed before completion.';
 personal[0].documents = [['DESIGN PRESENTATION (PDF)', 'moka-sushi-design.pdf']];
 personal[0].media = [
@@ -231,8 +239,8 @@ personal[0].facts = [
 personal[0].credit = '';
 personal[0].note = '';
 
-// Clean handoff template: no real project media is bundled in this folder.
-for (const item of [...research, ...personal, ...aCompany, ...bCompany, ...cross]) {
+// Sample entries (06–15) have no material: they stay blurred placeholders.
+for (const item of [...research.slice(4), personal[1], ...aCompany, ...bCompany, ...cross]) {
   item.image = null;
   item.media = undefined;
   item.documents = undefined;
@@ -252,3 +260,140 @@ window.PORTFOLIO = {
 };
 // Sample years for the placeholders (two per year, 2023 down to 2019); the footer marks them as samples.
 window.PORTFOLIO.projects.slice(5).forEach((item, i) => { item.year = 2023 - Math.floor(i / 2); });
+
+// Show only media that exists in dist/assets. A missing representative image falls back to the blurred
+// placeholder; missing pages and PDFs are left out; images get their pixel size so long pages do not jump.
+// BEGIN MEDIA (written by scripts/media-manifest.mjs; do not edit by hand)
+const availableMedia = {
+  "collective-housing-2023-model/page-1.jpg": [334,500],
+  "collective-housing-2023-model/page-2.jpg": [500,334],
+  "collective-housing-2023-model/page-3.jpg": [500,500],
+  "collective-housing-2023-model/page-4.jpg": [500,500],
+  "collective-housing-2023-model/page-5.jpg": [500,500],
+  "collective-housing-2023-model/page-6.jpg": [500,400],
+  "collective-housing-2023-model/page-7.jpg": [500,334],
+  "collective-housing-2023-model/page-8.jpg": [334,500],
+  "collective-housing-2023-model/page-9.jpg": [334,500],
+  "collective-housing-2023/design-1.jpg": [354,500],
+  "collective-housing-2023/design-2.jpg": [354,500],
+  "collective-housing-2023/design-3.jpg": [500,354],
+  "collective-housing-2023/design-4.jpg": [354,500],
+  "collective-housing-2023/design-5.jpg": [354,500],
+  "collective-housing-2023/design-6.jpg": [354,500],
+  "living-a-ramp/cover.jpg": [866,866],
+  "living-a-ramp/hero.jpg": [1985,2807],
+  "living-a-ramp/page-01.jpg": [1034,1462],
+  "living-a-ramp/page-03.jpg": [1034,1462],
+  "living-a-ramp/page-05.jpg": [1034,1462],
+  "living-a-ramp/page-06.jpg": [1034,1462],
+  "living-a-ramp/page-07.jpg": [1034,1462],
+  "living-a-ramp/page-08.jpg": [1034,1462],
+  "living-a-ramp/page-09.jpg": [1034,1462],
+  "living-a-ramp/page-10.jpg": [1034,1462],
+  "living-a-ramp/page-11.jpg": [1034,1462],
+  "living-a-ramp/page-12.jpg": [1034,1462],
+  "living-a-ramp/page-13.jpg": [1034,1462],
+  "living-a-ramp/page-15.jpg": [1034,1462],
+  "living-a-ramp/page-16.jpg": [1034,1462],
+  "living-a-ramp/page-17.jpg": [1034,1462],
+  "living-a-ramp/page-18.jpg": [1034,1462],
+  "living-a-ramp/page-19.jpg": [1034,1462],
+  "living-a-ramp/page-20.jpg": [1034,1462],
+  "living-a-ramp/page-23.jpg": [1034,1462],
+  "living-a-ramp/page-25.jpg": [1034,1462],
+  "living-a-ramp/page-26.jpg": [1034,1462],
+  "living-a-ramp/page-27.jpg": [1034,1462],
+  "living-a-ramp/page-28.jpg": [1034,1462],
+  "living-a-ramp/page-29.jpg": [1034,1462],
+  "living-a-ramp/page-30.jpg": [1034,1462],
+  "living-a-ramp/page-31.jpg": [1034,1462],
+  "living-a-ramp/page-32.jpg": [1034,1462],
+  "living-a-ramp/page-33.jpg": [1034,1462],
+  "living-a-ramp/page-34.jpg": [1034,1462],
+  "living-a-ramp/page-35.jpg": [1034,1462],
+  "living-a-ramp/page-36.jpg": [1034,1462],
+  "living-a-ramp/plan.jpg": [2107,1490],
+  "living-a-ramp/section.jpg": [3113,1490],
+  "living-energy-model/page-1.jpg": [745,1053],
+  "living-energy-model/page-2.jpg": [745,1053],
+  "living-energy-model/page-3.jpg": [745,1053],
+  "living-energy-outcome/airflow-frame.jpg": [1920,908],
+  "living-energy-pages/page-01.jpg": [993,1404],
+  "living-energy-pages/page-02.jpg": [1985,1404],
+  "living-energy-pages/page-03.jpg": [1985,1404],
+  "living-energy-pages/page-04.jpg": [1985,1404],
+  "living-energy-pages/page-05.jpg": [1985,1404],
+  "living-energy-pages/page-06.jpg": [1985,1404],
+  "living-energy-pre/page-01.jpg": [644,455],
+  "living-energy-pre/page-02.jpg": [644,455],
+  "living-energy-pre/page-03.jpg": [644,455],
+  "living-energy-pre/page-04.jpg": [644,455],
+  "living-energy-pre/page-05.jpg": [644,455],
+  "living-energy-pre/page-06.jpg": [644,455],
+  "living-energy-pre/page-07.jpg": [644,455],
+  "living-energy-pre/page-08.jpg": [644,455],
+  "living-energy-pre/page-09.jpg": [644,455],
+  "living-energy-pre/page-10.jpg": [644,455],
+  "living-energy-pre/page-11.jpg": [644,455],
+  "living-energy-pre/page-12.jpg": [644,455],
+  "living-energy-pre/page-13.jpg": [644,455],
+  "living-energy-pre/page-14.jpg": [644,455],
+  "living-energy-pre/page-15.jpg": [644,455],
+  "living-energy-pre/page-16.jpg": [644,455],
+  "living-energy-pre/page-17.jpg": [644,455],
+  "living-energy-pre/page-18.jpg": [644,455],
+  "living-energy-pre/page-19.jpg": [644,455],
+  "living-energy-pre/page-20.jpg": [644,455],
+  "living-energy-pre/page-21.jpg": [644,455],
+  "living-energy-pre/page-22.jpg": [644,455],
+  "living-energy-pre/page-23.jpg": [644,455],
+  "living-energy-pre/page-24.jpg": [644,455],
+  "living-energy-pre/page-25.jpg": [644,455],
+  "living-energy-pre/page-26.jpg": [644,455],
+  "living-energy-pre/page-27.jpg": [644,455],
+  "living-energy-pre/page-28.jpg": [644,455],
+  "living-energy-pre/page-29.jpg": [644,455],
+  "living-energy-pre/page-30.jpg": [644,455],
+  "living-energy-pre/page-31.jpg": [644,455],
+  "living-energy-pre/page-32.jpg": [644,455],
+  "living-energy-pre/page-33.jpg": [644,455],
+  "living-energy-pre/page-34.jpg": [644,455],
+  "moka-sushi/cover.jpg": [708,708],
+  "moka-sushi/design-03.jpg": [1404,993],
+  "moka-sushi/design-04.jpg": [1404,993],
+  "moka-sushi/design-11.jpg": [1404,993],
+  "moka-sushi/design-12.jpg": [1404,993],
+  "moka-sushi/design-15.jpg": [1404,993],
+  "moka-sushi/design-16.jpg": [1404,993],
+  "moka-sushi/design-17.jpg": [1404,993],
+  "moka-sushi/design-18.jpg": [1404,993],
+  "moka-sushi/design-19.jpg": [1404,993],
+  "moka-sushi/design-20.jpg": [1404,993],
+  "moka-sushi/design-21.jpg": [1404,993],
+  "moka-sushi/design-22.jpg": [1404,993],
+  "moka-sushi/design-23.jpg": [1404,993],
+  "moka-sushi/design-24.jpg": [1404,993],
+  "moka-sushi/design-25.jpg": [1404,993],
+  "reclaimed-stage/cover.jpg": [587,587],
+  "reclaimed-stage/page-01.jpg": [644,910],
+  "reclaimed-stage/page-02.jpg": [644,910],
+  "reclaimed-stage/page-03.jpg": [644,910],
+  "reclaimed-stage/page-04.jpg": [644,910],
+  "reclaimed-stage/page-05.jpg": [644,910],
+  "reclaimed-stage/page-06.jpg": [644,910],
+  "reclaimed-stage/page-07.jpg": [644,910],
+  "reclaimed-stage/page-08.jpg": [644,910],
+  "reclaimed-stage/page-09.jpg": [644,910],
+  "reclaimed-stage/page-10.jpg": [644,910],
+  "reclaimed-stage/page-11.jpg": [644,910],
+  "reclaimed-stage/page-12.jpg": [644,910],
+};
+// END MEDIA
+for (const item of window.PORTFOLIO.projects) {
+  if (item.image && !(item.image in availableMedia)) item.image = null;
+  item.media = item.media?.filter(page => page.src in availableMedia).map(page => {
+    const size = availableMedia[page.src];
+    return size ? { ...page, w: size[0], h: size[1] } : page;
+  });
+  item.documents = item.documents?.filter(([, file]) => file in availableMedia);
+}

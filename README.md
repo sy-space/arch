@@ -4,7 +4,21 @@
 
 ## 当前阶段
 
-先调整 UI / UX，再放素材。真实图片、PDF 和视频保存在你的 GitHub，之后放进 `dist/assets/`。在此之前，`dist/content.js` 末尾的一段循环会清空所有图片，首页 15 个条目全部显示为模糊占位。素材到位后删除这段循环即可。
+图片来自你在 GitHub 的 `tmp/` 文件夹，复制到 `dist/assets/` 并改成网站使用的文件名（`tmp/` 本身不动）。5 个真实项目已显示真实图片，06–15 示例条目仍是模糊占位。
+
+新增、改名或删除 `dist/assets/` 里的文件后，运行：
+
+```sh
+node scripts/media-manifest.mjs
+```
+
+它会把现有文件和像素尺寸写进 `content.js`：缺少的图片自动显示模糊占位，缺少的页面和 PDF 自动隐藏。
+
+还缺：MOKA SUSHI 建成后的照片、Living Energy 的效果图与图纸、研究册第 7–22 页和气流动画、Collective Housing 的 10 张图纸、所有 PDF 原件。Theatre、Collective Housing 和 Living Energy 汇报的图分辨率偏低，有高清原图后替换即可。
+
+## 与 GitHub 同步
+
+这个文件夹就是 GitHub 仓库 `sy-space/arch`。在 GitHub 上传图片后，在文件夹里运行 `git pull` 拉到本地；本地修改后运行 `git add -A`、`git commit -m "说明"`、`git push` 推上去。`CLAUDE.md` 和 `style.md` 含有中文名，不会上传。
 
 首页条目：
 
