@@ -7,7 +7,7 @@ const root = fileURLToPath(new URL('../dist/', import.meta.url));
 // Preview-only comparison: /v/<name>/ serves a version saved by scripts/snapshot.mjs, and every page gets the switch.
 const compareRoot = fileURLToPath(new URL('../.compare/', import.meta.url));
 const compareScript = fileURLToPath(new URL('./compare.js', import.meta.url));
-const port = Number(process.env.PORT || process.argv[2] || 4180);
+const port = Number(process.env.PORT || process.argv[2] || 4182);
 const types = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.png': 'image/png', '.webp': 'image/webp', '.svg': 'image/svg+xml', '.pdf': 'application/pdf', '.mp4': 'video/mp4', '.woff2': 'font/woff2' };
 
 function resolveInside(base, pathname) {
@@ -60,7 +60,7 @@ const server = http.createServer(async (request, response) => {
 });
 
 server.on('error', error => {
-  console.error(error.code === 'EADDRINUSE' ? `Port ${port} is already in use. Try: node scripts/serve.mjs 4181` : error.message);
+  console.error(error.code === 'EADDRINUSE' ? `Port ${port} is already in use. Try: node scripts/serve.mjs 4183` : error.message);
   process.exitCode = 1;
 });
 server.listen(port, '127.0.0.1', () => console.log(`Portfolio preview: http://127.0.0.1:${port}/\nPress Ctrl+C to stop.`));

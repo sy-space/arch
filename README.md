@@ -1,66 +1,95 @@
-# Architecture Portfolio — Nadia Sha
+# Nadia Sha 作品集
 
-英文建筑作品集网站。纯 HTML / CSS / JavaScript，不需要构建步骤，也没有第三方依赖；`dist/` 就是网站本身。
+本项目是 Nadia Sha 的英文建筑作品集网站，用 HTML、CSS 和 JavaScript 写成，无需构建，也无需安装依赖。整个网站放在 `dist/` 文件夹。
 
-## 当前阶段
+首页顶部一行放名字、三个分类和 CONTACT。下面是简介，再往下是贴满屏幕的方图墙：一行四张，文字在图下，Contact 占最后一格。
 
-图片来自你在 GitHub 的 `tmp/` 文件夹，复制到 `dist/assets/` 并改成网站使用的文件名（`tmp/` 本身不动）。5 个真实项目已显示真实图片，06–15 示例条目仍是模糊占位。
-
-新增、改名或删除 `dist/assets/` 里的文件后，运行：
-
-```sh
-node scripts/media-manifest.mjs
-```
-
-它会把现有文件和像素尺寸写进 `content.js`：缺少的图片自动显示模糊占位，缺少的页面和 PDF 自动隐藏。
-
-还缺：MOKA SUSHI 建成后的照片、Living Energy 的效果图与图纸、研究册第 7–22 页和气流动画、Collective Housing 的 10 张图纸、所有 PDF 原件。Theatre、Collective Housing 和 Living Energy 汇报的图分辨率偏低，有高清原图后替换即可。
-
-## 与 GitHub 同步
-
-这个文件夹就是 GitHub 仓库 `sy-space/arch`。在 GitHub 上传图片后，在文件夹里运行 `git pull` 拉到本地；本地修改后运行 `git add -A`、`git commit -m "说明"`、`git push` 推上去。`CLAUDE.md` 和 `style.md` 含有中文名，不会上传。
-
-首页条目：
-
-- 01 MOKA SUSHI：丹麦 Hobro 的个人落地项目（2026 年 2–7 月）。
-- 02–05 四个真实 RESEARCH 项目：Living Energy、Theatre Built from Reclaimed Building Materials（2024 秋，奥胡斯）、Living a Ramp（EPFL EAST，与 Domingo Prada 合作，2024 春，Basel）、Collective Housing Aarhus（2023 年 9–12 月，简介待补充）。
-- 06–15：10 个示例占位，不代表真实作品，页脚有说明。正式上线时隐藏，首页只显示真实项目。
-
-网站只显示英文名 Nadia Sha。联系方式尚未提供。
+旧的 Codex 版本已删除，GitHub 历史记录保留了它（提交 8e99c24）。
 
 ## 预览
 
-需要 Node.js 18 或更新版本。在项目文件夹运行：
+需要 Node.js 18 或以上。在项目文件夹运行：
 
 ```sh
 node scripts/serve.mjs
 ```
 
-打开 http://127.0.0.1:4180/ 。左下角的版本按钮可以在保存过的几个版本之间切换，页面位置和打开的项目保持不变。这个按钮只在本地预览里出现，不会上线。保存版本：`node scripts/snapshot.mjs 1-arial`（按钮上显示 ARIAL，数字只决定顺序）；给当前版本命名：`node scripts/snapshot.mjs --current "AFTER"`；清空：`node scripts/snapshot.mjs --clear`。
+浏览器打开 http://127.0.0.1:4182/ 。改完文件刷新页面，Ctrl+C 关闭。4182 被占用时改用 `node scripts/serve.mjs 4183`。4173 留给另一个工具。
 
-端口被占用时运行 `node scripts/serve.mjs 4181`。不要用 4173，那个端口你另有用途。修改文件后刷新浏览器即可，按 Ctrl+C 关闭。
+对比两种改法前，先运行 `node scripts/snapshot.mjs 1-old` 存一份。预览页左下角随即出现版本按钮，点击即可切换，页面位置不变。`--current "NEW"` 给当前版本命名，`--clear` 清空全部存档。按钮只在本地预览出现，不进网站。
 
-## 修改内容
+## 项目和图片
 
-| 文件 | 用途 |
+首页现有 15 个条目，01 到 05 是真实作品：
+
+- 01 MOKA SUSHI，Hobro，2026 年 2 月至 7 月建成。
+- 02 Living Energy，Aarhus 建筑学院硕士论文，2026。
+- 03 Theatre Built from Reclaimed Building Materials，Aarhus，2024 年秋。
+- 04 Living a Ramp，EPFL EAST，与 Domingo Prada 合作，Basel，2024 年春。
+- 05 Collective Housing，Aarhus，2023 年 9 月至 12 月，简介待写。
+
+06 到 15 是示例，显示为模糊方块，页脚注明它们并非真实作品。上线前从首页移除。
+
+原图存放在 GitHub 的 `tmp/` 文件夹。本项目把可用的图复制到 `dist/assets/`，按 `content.js` 需要的名字改名，`tmp/` 原样保留。MOKA SUSHI、Living a Ramp 和 Theatre 的首页图从页面裁出正方形，文件名为 `cover.jpg`。
+
+在 `dist/assets/` 加图、改名或删图之后，运行：
+
+```sh
+node scripts/media-manifest.mjs
+```
+
+脚本把现有文件和像素尺寸写进 `content.js`。缺图的项目显示模糊方块，缺失的页面和 PDF 不显示。
+
+仍缺的材料：
+
+- MOKA SUSHI 建成后的照片。项目介绍已提到照片，照片到位后再决定这句的去留。
+- Living Energy 的效果图和图纸、研究册第 7 到 22 页、气流动画。
+- Collective Housing 的 10 张正式图纸，以及全部 PDF 原件。
+
+Theatre、Collective Housing 和 Living Energy 0622 汇报的图尺寸偏小，大屏上发糊。拿到高清原图后替换。
+
+## 改内容
+
+| 文件 | 内容 |
 | --- | --- |
-| `dist/content.js` | 15 个项目的标题、类别、图片、介绍、事实、文档和详情媒体顺序 |
-| `dist/assets/` | 首页与详情图片、PDF、视频（素材到位后创建） |
-| `dist/index.html` | 姓名、个人介绍、分类导航和页脚 |
-| `dist/style.css`、`dist/compact.css` | 网格、间距、字体和手机适配（`compact.css` 覆盖 `style.css`） |
-| `dist/app.js` | 项目显示、类别筛选、打开和关闭详情 |
-| `CLAUDE.md` | 给 Claude Code 的长期设计与编辑要求 |
-| `style.md` | 参考网站分析与已确认的设计方向 |
+| `dist/content.js` | 15 个项目的标题、类别、图片、介绍、信息表、PDF 和详情页图片顺序 |
+| `dist/assets/` | 网站使用的图片、PDF、视频 |
+| `tmp/` | 上传的原图，不可删除 |
+| `dist/index.html` | 名字、简介、分类、Contact 格和页脚，联系方式填在这里 |
+| `dist/style.css` | 图墙、间距、字体和手机排版 |
+| `dist/app.js` | 方图、筛选、详情页、图片计数和左右键切换 |
+| `scripts/media-manifest.mjs` | 登记 `dist/assets/` 里的文件和尺寸 |
+| `CLAUDE.md`、`style.md` | 给 Claude 的要求和设计记录，只留本地，不上传 |
 
-在 `content.js` 中：数组顺序就是首页顺序；`image` 是首页代表图；`focus`（可选，如 `'50% 30%'`）指定正方形裁切时保留画面的哪一部分；`media` 决定详情页图片与视频的顺序，每项可加 `w`、`h`（像素宽高），让长图加载时页面不跳动；`documents` 提供 PDF 原件入口。
+`content.js` 里数组的顺序就是首页顺序。每个项目包含这些字段：
 
-每个项目有自己的链接，是项目名的小写连字符形式，例如 `http://127.0.0.1:4180/#moka-sushi`。改项目名会改变链接。类别值为 `research`、`projects` 或 `cross-disciplinary`。
+- `image`：首页那张图。
+- `focus`：可选，例如 `'50% 30%'`，决定正方形裁掉画面哪一侧。
+- `media`：详情页图片和视频的顺序。
+- `documents`：PDF 原件。
 
-首页所有代表图统一为正方形，用 `object-fit: cover` 裁切，模糊占位同样是方形；详情页图片保持原始比例连续展示。
+类别只有三个值：`research`、`projects`、`cross-disciplinary`。
 
-## 放入真实材料时
+每个项目有独立链接，由项目名转成小写加连字符，例如 `http://127.0.0.1:4182/#moka-sushi`。项目名改动，链接随之改变。
+
+首页图统一裁成正方形。详情页的图保留原比例，一张接一张往下排。
+
+## 与 GitHub 同步
+
+项目文件夹即公开仓库 `sy-space/arch`。GitHub 上传新图后，运行 `git pull` 拉到本地。本地改完，运行三行推送：
+
+```sh
+git add -A
+git commit -m "写明改了什么"
+git push
+```
+
+`CLAUDE.md` 和 `style.md` 含中文名，`.gitignore` 将它们挡在仓库之外。
+
+## 放入真实材料
 
 - 照片导出为 WebP 或 JPG，不用 PNG。
-- 同步更新图片说明 `alt`、来源 `credit`、正文、事实 `facts` 和备注 `note`。
-- 保留准确的作者、摄影师、合作团队及个人职责；尚未提供的项目名称、地点、成果和联系方式不可编造。
-- 所有照片和图纸都是本人作品。
+- 换图时同步修改图片说明 `alt`、正文和信息表。
+- 作者、摄影师、合作者和个人职责照实填写。未提供的地点、成果和联系方式留空，不编造。
+- 所有照片和图纸均为 Nadia Sha 本人作品。
+- 网站只出现英文名 Nadia Sha。联系方式尚未提供。

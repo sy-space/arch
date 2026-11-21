@@ -1,2 +1,164 @@
-:root{font-family:Arial,Helvetica,sans-serif;color:#171717;background:#fff;font-synthesis:none;--red:#a72e24;--line:#d6d6d6}*{box-sizing:border-box}html{scroll-behavior:auto}body{margin:0}button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}button:focus-visible,a:focus-visible{outline:2px solid var(--red);outline-offset:4px}a{color:inherit;text-decoration:none}.skip{position:fixed;top:-50px;left:16px;background:#fff;padding:12px;z-index:10;font-size:12px}.skip:focus{top:16px}.profile{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;padding:28px 5% 36px;border-bottom:1px solid #222}.profile-name{font-size:32px;line-height:.92;letter-spacing:-1.8px;position:relative;width:max-content}.profile-name span{position:absolute;right:-18px;top:-3px;color:var(--red);font-family:inherit;font-size:32px}.profile-intro{font-size:16px;line-height:1.35;letter-spacing:-.3px}.profile-intro p{margin:0}.profile-note{color:#666;margin-top:18px!important}.profile-status{justify-self:end;text-align:right;color:#777;font:12px/1.45 Arial,Helvetica,sans-serif}.categories{display:flex;gap:28px;align-items:baseline;padding:18px 5%;border-bottom:1px solid var(--line);position:sticky;top:0;background:#fffffff2;backdrop-filter:blur(10px);z-index:5}.category{font-size:12px;line-height:1.35;color:#606060;position:relative}.category.active{color:var(--red)}.category.active:after{content:'';position:absolute;left:0;right:0;bottom:-7px;border-bottom:1px solid var(--red)}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:48px 2.2%;padding:40px 5% 80px}.project-card{min-width:0}.project-open{display:block;width:100%;aspect-ratio:1;overflow:hidden;background:#eee}.project-open img{display:block;width:100%;height:100%;object-fit:cover;transition:none}.caption{display:grid;grid-template-columns:32px 1fr;gap:10px;padding-top:12px}.caption>span{color:var(--red);font:12px/1 Arial,Helvetica,sans-serif;padding-top:2px}.caption h2{font-size:16px;line-height:1.2;font-weight:400;letter-spacing:-.35px;margin:0}.caption p{font-size:12px;line-height:1.35;color:#707070;margin:7px 0 0}.project-card[hidden]{display:none}footer{display:flex;justify-content:space-between;gap:24px;padding:20px 5%;border-top:1px solid var(--line);color:#737373;font-size:12px;line-height:1.4}dialog{width:100%;height:100dvh;max-width:none;max-height:none;margin:0;padding:0;border:0;background:#f4f4f2;color:#171717}dialog::backdrop{background:#0006}.dialog-bar{display:flex;justify-content:space-between;align-items:center;padding:22px 5%;border-bottom:1px solid #c8c8c8;font-size:12px;font-family:Arial,Helvetica,sans-serif;position:sticky;top:0;background:#f4f4f2f2;z-index:2}.dialog-bar button{font-family:Arial,sans-serif;font-size:16px}.detail{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:5%;padding:5%;align-items:start}.detail-image{margin:0}.detail-image img{display:block;width:100%;aspect-ratio:1;object-fit:cover}.detail-image p{font-size:12px;color:#707070;margin:10px 0 0}.detail-copy{padding-top:6%;max-width:520px}.detail-label{font:12px/1.35 Arial,Helvetica,sans-serif;color:#777;margin:0}.detail-copy h1{font-size:32px;line-height:1.02;letter-spacing:-1.5px;font-weight:400;margin:24px 0}.detail-copy>p:not(.detail-label):not(.detail-note){font-size:16px;line-height:1.45;margin:0 0 34px}.detail-copy dl{font-size:12px;margin:0}.detail-copy dl div{display:grid;grid-template-columns:92px 1fr;gap:14px;padding:12px 0;border-top:1px solid #c9c9c9;line-height:1.4}.detail-copy dt{color:#777}.detail-copy dd{margin:0}.detail-note{font-size:12px;line-height:1.5;color:#6d6d6d;margin-top:34px;max-width:360px}@media(max-width:760px){.profile{grid-template-columns:1fr 1fr;padding:22px 5% 28px;gap:18px}.profile-name{font-size:32px}.profile-intro{grid-column:1/-1;grid-row:2}.profile-note{margin-top:12px!important}.profile-status{font-size:12px}.categories{flex-wrap:wrap;gap:12px 18px;padding:15px 5%;overflow:visible;white-space:normal}.category{text-align:left;flex:none}.category:last-child{flex-basis:100%}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 3%;padding:28px 5% 55px}.caption{grid-template-columns:23px 1fr;gap:6px}.caption h2{font-size:16px}.caption p{font-size:12px}footer{display:block;padding:16px 5%}footer span{display:block;margin:5px 0}.detail{display:block;padding:5%}.detail-copy{padding-top:28px}.detail-copy h1{font-size:32px;margin:18px 0}.detail-copy>p:not(.detail-label):not(.detail-note){margin-bottom:24px}.dialog-bar{padding:18px 5%}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
-body:has(dialog[open]){overflow:hidden}
+/* Portfolio: one face (Space Mono) at one size, black on white, a wall of equal square tiles from edge to edge, slow and quiet hover. */
+:root{
+  --font:"Space Mono",ui-monospace,monospace;
+  --ink:#000;--paper:#fff;--muted:#666;--rule:#000;--hair:#d9d9d9;
+  --margin:clamp(20px,5vw,80px); /* detail view */
+  --edge:clamp(12px,1.2vw,20px); /* home page: text inset from the screen edge, and inside the intro cell */
+  --col-gap:clamp(16px,3vw,48px);
+  --s1:8px;--s2:16px;--s3:24px;--s4:48px;--s5:96px;--s6:144px;
+  --ease:cubic-bezier(.2,.8,.2,1);
+  color-scheme:light;accent-color:#000;
+}
+*,*:before,*:after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:72px}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 14px/1.5 var(--font);letter-spacing:0;font-synthesis:none;-webkit-font-smoothing:antialiased}
+h1,h2,p,dl,dd,ol{margin:0;padding:0}
+h1,h2{font-size:inherit;line-height:inherit}
+ol{list-style:none}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;letter-spacing:inherit}
+::selection{background:#000;color:#fff}
+:focus-visible{outline:2px solid #000;outline-offset:4px}
+.skip{position:fixed;top:-60px;left:var(--edge);z-index:20;padding:12px;background:#000;color:#fff}
+.skip:focus{top:12px}
+
+/* Text links draw their underline on hover. */
+.bar-link,.foot a,.pager a,.documents a{background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;transition:background-size .3s var(--ease)}
+@media (hover:hover){
+  .bar-link:hover,.foot a:hover,.pager a:hover,.documents a:hover{background-size:100% 1px}
+}
+
+/* Top bar: name, filters, count and contact in one sticky row; active category filled black. */
+.bar{position:sticky;top:0;z-index:10;display:flex;align-items:center;gap:var(--s3) var(--s4);padding:var(--s2) var(--edge);background:var(--paper);border-bottom:1px solid var(--rule)}
+.name{font-weight:700;white-space:nowrap}
+.filters{display:flex;flex-wrap:wrap;gap:var(--s1)}
+.filter{padding:2px 8px;color:var(--ink);transition:background-color .15s var(--ease),color .15s var(--ease)}
+.filter.is-active{background:#000;color:#fff;font-weight:700}
+@media (hover:hover){.filter:not(.is-active):hover{background:#eee}}
+.count{color:var(--muted);margin-inline-start:calc(var(--s3) - var(--s4))}
+.bar-link{margin-inline-start:auto}
+
+/* Work: four equal square tiles a row from screen edge to screen edge, no gutters, the label laid on the
+   bottom-left of each image. The first cell holds the introduction, so 15 projects fill four full rows. */
+/* The intro is a band above the wall, on the wall's four columns: text over the first two, role in the last. */
+.intro-band{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));padding:var(--s4) var(--edge) var(--s5)}
+.intro-band p:first-child{grid-column:1/3;max-width:46ch;padding-inline-end:var(--s3)}
+.role{grid-column:4;color:var(--muted);max-width:34ch}
+.work{padding:0}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0}
+.tile{display:block;transition:opacity .3s var(--ease)}
+/* Tiles touch the screen edge, so the focus ring sits inside: black with a white inner line, visible on any image. */
+.tile:focus-visible{outline:none}
+.tile:focus-visible .frame:after{content:'';position:absolute;inset:0;z-index:1;box-shadow:inset 0 0 0 3px #000,inset 0 0 0 5px #fff}
+.frame{display:block;position:relative;aspect-ratio:1;overflow:hidden;background:#eee}
+.frame img,.frame .mosaic{display:block;width:100%;height:100%;object-fit:cover;transform:scale(1);transition:transform .4s var(--ease)}
+.tile{position:relative}
+/* Caption under each image: number and category, title, place and affiliation. */
+.caption{display:flex;flex-direction:column;align-items:flex-start;padding:var(--s1) var(--edge) var(--s3)}
+.caption>*{line-height:1.35}
+.tile-number,.tile-meta{color:var(--muted)}
+.tile-title{font-weight:400;text-wrap:balance;background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;transition:background-size .3s var(--ease)}
+@media (hover:hover){
+  .tile:hover .tile-title{background-size:100% 1px}
+}
+@media (hover:hover){
+  .tile:hover .frame img,.tile:hover .frame .mosaic{transform:scale(1.03);transition-duration:.6s}
+}
+.tile.is-dimmed{opacity:.2}
+@media (hover:hover){.tile.is-dimmed:hover{opacity:.5}}
+.tile.is-dimmed:focus-visible{opacity:1}
+
+/* Contact: the last cell of the wall, heading at the top, details at the bottom like a tile's label. */
+.contact-cell{display:flex;flex-direction:column;justify-content:space-between;padding:var(--s2) var(--edge) var(--s1)}
+.contact-cell:focus{outline:none}
+.contact-cell dl{display:grid;gap:var(--s1)}
+.contact-cell dt{color:var(--muted)}
+
+.foot{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--col-gap);margin-top:0;padding:var(--s3) var(--edge) var(--s4);border-top:1px solid var(--hair);color:var(--muted)}
+.foot span:first-child{grid-column:1/4}
+.foot span:nth-child(2){grid-column:4/10}
+.foot a{grid-column:10/13;justify-self:end;color:var(--ink)}
+
+/* Blurred placeholders until real images arrive. */
+.mosaic{position:relative;background:
+  linear-gradient(135deg,hsl(calc(205 + var(--seed) * 9),9%,91%) 0 22%,transparent 22% 48%,hsl(calc(12 + var(--seed) * 7),24%,72%) 48% 67%,transparent 67%),
+  linear-gradient(35deg,hsl(calc(184 + var(--seed) * 13),18%,74%) 0 34%,hsl(calc(35 + var(--seed) * 4),15%,87%) 34% 58%,hsl(calc(220 + var(--seed) * 5),10%,63%) 58%);
+  filter:blur(10px) saturate(.72)}
+.frame .mosaic{width:auto;height:auto;position:absolute;inset:-24px}
+.mosaic:after{content:'';position:absolute;inset:0;background:repeating-linear-gradient(90deg,#fff2 0 18px,#0001 18px 36px),repeating-linear-gradient(0deg,#fff1 0 22px,#0001 22px 44px);mix-blend-mode:soft-light}
+.pages .mosaic-clip{display:block;position:relative;min-height:72vh;overflow:hidden}
+.pages .mosaic-clip .mosaic{position:absolute;inset:-24px}
+
+/* Detail: black sheet, text first, then the pages in one column. */
+dialog{width:100%;max-width:none;height:100dvh;max-height:none;margin:0;padding:0;border:0;background:#000;color:#fff;overscroll-behavior:contain}
+dialog::backdrop{background:#000}
+/* The detail fades in (.2s) and out (.15s). */
+dialog,dialog::backdrop{opacity:0;transition:opacity .15s ease-in,overlay .15s allow-discrete,display .15s allow-discrete}
+dialog[open],dialog[open]::backdrop{opacity:1;transition-duration:.2s;transition-timing-function:var(--ease)}
+@starting-style{dialog[open],dialog[open]::backdrop{opacity:0}}
+.dialog-status{display:flex;gap:var(--s3)}
+dialog ::selection{background:#fff;color:#000}
+dialog :focus-visible{outline-color:#fff}
+.dialog-bar{position:sticky;top:0;z-index:2;display:flex;justify-content:space-between;align-items:center;padding:var(--s2) max(var(--margin),calc((100% - 1280px) / 2 + var(--margin)));background:#000;border-bottom:1px solid #333;color:#9a9a9a}
+.dialog-bar button{color:#fff;padding:4px 0;background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;transition:background-size .3s var(--ease)}
+@media (hover:hover){.dialog-bar button:hover{background-size:100% 1px}}
+.detail{max-width:1280px;margin:0 auto;padding:var(--s5) var(--margin)}
+.detail-head{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--col-gap)}
+.detail-category{grid-column:1/4;color:#9a9a9a}
+.detail-text{grid-column:4/13;max-width:72ch}
+.detail-text h1{font-weight:700;margin-bottom:var(--s4);text-wrap:balance}
+.detail-text h1:focus{outline:none}
+.facts{margin-bottom:var(--s4);border-bottom:1px solid #333}
+.facts div{display:grid;grid-template-columns:minmax(120px,22ch) 1fr;gap:var(--s2);padding:var(--s1) 0;border-top:1px solid #333}
+.facts dt{color:#9a9a9a}
+.summary{margin-bottom:var(--s3)}
+.documents{display:flex;flex-wrap:wrap;gap:var(--s1) var(--s3);margin-bottom:var(--s3)}
+.documents[hidden]{display:none}
+.note{color:#9a9a9a}
+.note[hidden]{display:none}
+.pages{display:grid;gap:var(--s2);margin-top:var(--s5)}
+.pages img,.pages video{display:block;width:100%;height:auto;background:#111}
+.pager{display:flex;flex-wrap:wrap;justify-content:space-between;gap:var(--s2) var(--s4);margin-top:var(--s5);padding-top:var(--s3);border-top:1px solid #333}
+.pager .next{margin-inline-start:auto;text-align:right}
+.pager:empty{display:none}
+
+/* Tablet: two tiles a row. */
+@media (max-width:900px){
+  .bar{flex-wrap:wrap;gap:var(--s1) var(--s3)}
+  .count{margin-inline-start:0}
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .intro-band{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .intro-band p:first-child{grid-column:1}
+  .role{grid-column:2}
+  .foot{grid-template-columns:1fr auto;row-gap:var(--s1)}
+  .foot span:first-child,.foot span:nth-child(2){grid-column:1}
+  .foot a{grid-column:2;grid-row:1}
+  .detail-category{grid-column:1/-1;margin-bottom:var(--s2)}
+  .detail-text{grid-column:1/-1}
+}
+
+/* Phone: two tiles a row, the bar scrolls away, every control 44px tall. */
+@media (max-width:520px){
+  .work{padding-top:var(--s4)}
+  .caption{padding:var(--s1) var(--edge) var(--s3)}
+  /* Name and contact share the first row; the filters hang 8px left so their words line up with the name. */
+  .bar{position:static;gap:0 var(--s2);padding-block:var(--s1)}
+  .name a,.filter,.bar-link{display:inline-flex;align-items:center;min-height:44px}
+  .bar-link{order:1}
+  .filters{order:2;width:calc(100% + 8px);margin-inline-start:-8px;gap:0 var(--s1)}
+  .count{order:3}
+  .intro-band{grid-template-columns:1fr;gap:var(--s3);padding-block:var(--s4)}
+  .intro-band p:first-child,.role{grid-column:1}
+  .contact-cell{padding-block:var(--s1)}
+  .contact-cell dl{gap:0}
+  .foot a,.pager a{display:inline-flex;align-items:center;min-height:44px}
+  .dialog-bar button{min-height:44px}
+  .detail{padding-top:var(--s4)}
+  .facts div{grid-template-columns:1fr;gap:0}
+  .pages,.pager{margin-top:var(--s4)}
+}
+
+@media (prefers-reduced-motion:reduce){
+  *,*:before,*:after,dialog::backdrop{transition:none!important}
+  .tile:hover .frame img,.tile:hover .frame .mosaic{transform:none}
+}
